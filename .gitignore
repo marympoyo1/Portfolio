@@ -1,6 +1,7 @@
 .chrome-headless/
 .chrome-headless-site/
 .chrome-headless-site-check/
+.chrome-headless-site-check2/
 docx_src/
 portfolioo.pdf/
 original_resume_preview.png
@@ -9,6 +10,7 @@ portfolio_site_preview.png
 portfolio_work_preview.png
 portfolio_contact_preview.png
 site_polish_preview.png
+site_spacing_preview.png
 Mary_Mpoyo_Resume_Editable.docx
 Mary_Mpoyo_Resume_Editable.rtf
 Mary_Mpoyo_Resume_Final.html
