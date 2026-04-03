@@ -50,8 +50,9 @@ const contactForm = document.querySelector('#contactForm');
 const formStatus = document.querySelector('#formStatus');
 const contactSubmitButton = document.querySelector('#contactSubmitButton');
 const web3formsAccessKey = document.querySelector('#web3formsAccessKey');
+const websiteField = document.querySelector('#websiteField');
 
-if (contactForm && formStatus && contactSubmitButton && web3formsAccessKey) {
+if (contactForm && formStatus && contactSubmitButton && web3formsAccessKey && websiteField) {
     const defaultButtonContent = contactSubmitButton.innerHTML;
 
     const setFormStatus = (message, isError = false) => {
@@ -95,6 +96,12 @@ if (contactForm && formStatus && contactSubmitButton && web3formsAccessKey) {
 
     contactForm.addEventListener('submit', async (event) => {
         event.preventDefault();
+
+        if (websiteField.value.trim() !== '') {
+            contactForm.reset();
+            setFormStatus('Thanks! Your message was sent successfully.');
+            return;
+        }
 
         const formData = new FormData(contactForm);
         const name = formData.get('name')?.toString().trim() || '';
