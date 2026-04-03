@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mary Mpoyo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <style>
+        ::selection {
+            background: rgba(196, 106, 58, 0.22);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden bg-[#fcf7f2] font-Outfit leading-8 text-slate-900 dark:bg-[#0f172a] dark:text-white">
+
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+        <img src="./images/chatT.png" alt="Logo" class="w-28 cursor-pointer mr-14 dark:hidden">
+        <img src="./images/chatdm.png" alt="Logo" class="w-28 cursor-pointer mr-14 hidden dark:block">
+
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full border border-black/10 bg-white/70 px-12 py-3 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-md font-Ovo dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+            <li><a href="#top" class="rounded-full px-3 py-1.5 transition hover:bg-accent/10 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 dark:hover:bg-white/10 dark:hover:text-white">Home</a></li>
+            <li><a href="#about" class="rounded-full px-3 py-1.5 transition hover:bg-accent/10 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 dark:hover:bg-white/10 dark:hover:text-white">About</a></li>
+            <li><a href="#focus" class="rounded-full px-3 py-1.5 transition hover:bg-accent/10 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 dark:hover:bg-white/10 dark:hover:text-white">Focus</a></li>
+            <li><a href="#work" class="rounded-full px-3 py-1.5 transition hover:bg-accent/10 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 dark:hover:bg-white/10 dark:hover:text-white">Projects</a></li>
+            <li><a href="#contact" class="rounded-full px-3 py-1.5 transition hover:bg-accent/10 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 dark:hover:bg-white/10 dark:hover:text-white">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+            <button type="button" aria-label="Toggle dark mode" onclick="toggleTheme()" class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/70 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+                <img src="./images/moon_icon.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/sun_icon.png" alt="" class="w-6 hidden dark:block">
+            </button>
+
+            <a href="#contact" class="hidden lg:flex items-center gap-3 rounded-full border border-accent/40 bg-accent px-10 py-2.5 font-Ovo text-white shadow-[0_14px_30px_rgba(196,106,58,0.28)] transition hover:-translate-y-0.5 hover:bg-[#af5d33] dark:border-accent/50 dark:bg-accent dark:text-white">
+                Contact Me
+                <img src="./images/arrow-icon-dark.png" alt="" class="w-3 brightness-[8]">
+            </a>
+
+            <button id="menuToggleButton" class="block md:hidden ml-3" type="button" aria-label="Open navigation menu" aria-controls="sideMenu" aria-expanded="false" onclick="openMenu()">
+                <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/menu-white.png" alt="" class="w-6 hidden dark:block">
+            </button>
+        </div>
+
+        <div id="menuOverlay" class="fixed inset-0 z-40 hidden bg-black/50 backdrop-blur-sm md:hidden" onclick="closeMenu()"></div>
+
+        <ul id="sideMenu" class="flex md:hidden flex-col gap-6 py-24 px-8 fixed -right-72 top-0 bottom-0 w-72 z-50 h-screen bg-gradient-to-b from-rose-50 via-white to-orange-50 shadow-[-12px_0_40px_rgba(15,23,42,0.18)] transition duration-500 font-Ovo dark:from-[#1a0830] dark:via-darkTheme dark:to-[#25103e] dark:text-white">
+            <button type="button" aria-label="Close navigation menu" class="absolute right-6 top-6" onclick="closeMenu()">
+                <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden">
+                <img src="./images/close-white.png" alt="" class="w-5 cursor-pointer hidden dark:block">
+            </button>
+
+            <li class="text-sm uppercase tracking-[0.35em] text-gray-500 dark:text-white/60">Navigate</li>
+            <li><a href="#top" class="block rounded-2xl border border-black/10 bg-white/80 px-5 py-3 shadow-sm transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" class="block rounded-2xl border border-black/10 bg-white/80 px-5 py-3 shadow-sm transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10" onclick="closeMenu()">About</a></li>
+            <li><a href="#focus" class="block rounded-2xl border border-black/10 bg-white/80 px-5 py-3 shadow-sm transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10" onclick="closeMenu()">Focus</a></li>
+            <li><a href="#work" class="block rounded-2xl border border-black/10 bg-white/80 px-5 py-3 shadow-sm transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10" onclick="closeMenu()">Projects</a></li>
+            <li><a href="#contact" class="block rounded-2xl border border-black/10 bg-white/80 px-5 py-3 shadow-sm transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10" onclick="closeMenu()">Contact</a></li>
+            <li class="mt-4 rounded-3xl bg-black px-5 py-4 text-white dark:bg-white dark:text-darkTheme">
+                <p class="text-sm uppercase tracking-[0.25em] text-white/70 dark:text-darkTheme/70">Right now</p>
+                <p class="mt-2 text-base leading-6">Looking for opportunities to grow, build, and contribute in tech.</p>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="top" class="w-11/12 max-w-5xl text-center mx-auto min-h-screen flex flex-col items-center justify-center gap-5 pt-24 pb-12">
+        <span class="rounded-full border border-accent/20 bg-white/80 px-5 py-2 text-sm uppercase tracking-[0.28em] text-accent shadow-[0_10px_25px_rgba(196,106,58,0.12)] backdrop-blur-sm dark:border-accent/30 dark:bg-white/5">Houston, Texas</span>
+        <img src="./images/linked.jpg" alt="Mary Mpoyo headshot" class="rounded-full w-32 ring-4 ring-white/80 shadow-[0_18px_40px_rgba(15,23,42,0.12)] dark:ring-white/10 dark:shadow-none">
+        <h3 class="flex items-center gap-2 text-xl md:text-2xl mb-3 font-Ovo text-slate-700 dark:text-white/80">Hi! I’m Mary Mpoyo.</h3>
+        <h1 class="max-w-4xl text-4xl sm:text-6xl lg:text-[68px] leading-tight font-Ovo">
+            C.S. student at Texas Southern University.
+        </h1>
+        <p class="max-w-3xl mx-auto text-lg sm:text-xl text-gray-700 dark:text-white/85 font-Ovo">
+            I’m an aspiring software engineer who enjoys building web apps and software experiences that feel intuitive, thoughtful, and easy to use.
+        </p>
+        <p class="max-w-2xl mx-auto text-sm sm:text-base text-gray-600 dark:text-white/75 font-Ovo">
+            I’m excited about opportunities where I can keep learning, contribute to meaningful work, and grow as a developer.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <a href="#work" class="px-10 py-3 rounded-full bg-accent text-white text-wrap flex items-center gap-2 shadow-[0_14px_30px_rgba(196,106,58,0.28)] transition hover:-translate-y-0.5 hover:bg-[#af5d33]">
+                View Projects
+                <img src="./images/right-arrow-white.png" alt="" class="w-4">
+            </a>
+
+            <a href="./images/Mary_Mpoyo_Resume.pdf" target="_blank" rel="noopener noreferrer" class="px-10 py-3 border rounded-full border-black/10 flex items-center gap-2 bg-white/80 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+                Resume
+                <img src="./images/download-icon.png" alt="" class="w-4">
+            </a>
+        </div>
+
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-600 dark:text-white/70">
+            <a href="https://www.linkedin.com/in/mary-m-717a83253/" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 bg-white/70 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">LinkedIn</a>
+            <a href="https://github.com/marympoyo1" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 bg-white/70 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">GitHub</a>
+            <a href="mailto:marympoyo1@gmail.com" class="rounded-full border border-black/10 bg-white/70 px-4 py-2 transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">Email Me</a>
+        </div>
+    </div>
+
+    <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h2 class="text-center text-5xl font-Ovo">About Me</h2>
+
+        <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+            <div class="max-w-max mx-auto relative">
+                <img src="./images/linked.jpg" alt="Mary Mpoyo portrait" class="w-64 sm:w-80 rounded-3xl max-w-none">
+
+                <div class="bg-white/95 w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_18px_45px_rgba(196,106,58,0.16)] flex items-center justify-center dark:bg-white/90">
+    <img src="./images/circular-text.svg" alt="" class="w-full animate-spin_slow">
+    <span aria-hidden="true" class="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-4xl sm:text-5xl leading-none">👩🏾‍💻</span>
+</div>
+            </div>
+
+            <div class="flex-1">
+                <p class="mb-10 max-w-2xl text-gray-700 dark:text-white/80 font-Ovo">
+                    I’m a Computer Science student at Texas Southern University in Houston who enjoys building software that feels useful, approachable, and thoughtfully designed. I like taking ideas and turning them into real projects that people can actually interact with and enjoy.
+
+My background in teamwork, customer-facing roles, and fast-paced environments has shaped how I work with others and solve problems. Whether I’m building interfaces, figuring out backend logic, or debugging an issue, I enjoy work that blends creativity, curiosity, and practical impact.
+
+                </p>
+
+                <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+                    <li class="rounded-3xl border border-black/10 bg-white/70 p-6 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:bg-panel hover:shadow-[0_16px_35px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:shadow-none">
+                        <div class="mt-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-accentSoft dark:bg-white/10">
+                            <svg viewBox="0 0 48 48" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M18 16l-8 8 8 8M30 16l8 8-8 8" fill="none" stroke="#c46a3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M26 12l-4 24" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Languages</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">
+                            Python, Java, C++, HTML, JavaScript, React
+                        </p>
+                    </li>
+
+                    <li class="rounded-3xl border border-black/10 bg-white/70 p-6 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:bg-panel hover:shadow-[0_16px_35px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:shadow-none">
+                        <div class="mt-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-accentSoft dark:bg-white/10">
+                            <svg viewBox="0 0 48 48" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M10 18l14-7 14 7-14 7-14-7z" fill="#c46a3a"/>
+                                <path d="M16 23v7c0 2 4 5 8 5s8-3 8-5v-7" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Education</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">
+                            Working toward my B.S. in Computer Science while building experience through coursework, projects, and hands-on problem solving.
+                        </p>
+                    </li>
+
+                    <li class="rounded-3xl border border-black/10 bg-white/70 p-6 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:bg-panel hover:shadow-[0_16px_35px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:shadow-none">
+                        <div class="mt-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-accentSoft dark:bg-white/10">
+                            <svg viewBox="0 0 48 48" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="10" y="12" width="28" height="24" rx="6" fill="#0f172a"/>
+                                <rect x="15" y="17" width="18" height="4" rx="2" fill="#fffaf5"/>
+                                <rect x="15" y="24" width="12" height="4" rx="2" fill="#c46a3a"/>
+                            </svg>
+                        </div>
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Projects</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">
+                            Built projects across web development and software engineering, including hackathon work and personal builds.
+                        </p>
+                    </li>
+                </ul>
+
+                <h4 class="my-6 text-gray-700 font-Ovo dark:text-white/80">Technologies I Use</h4>
+
+                <ul class="flex items-center gap-3 sm:gap-5 flex-wrap">
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-black/10 bg-white/70 rounded-2xl cursor-pointer transition hover:-translate-y-1 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+                        <img src="./images/vscode.png" alt="VS Code" class="w-5 sm:w-7">
+                    </li>
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-black/10 bg-white/70 rounded-2xl cursor-pointer transition hover:-translate-y-1 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+                        <img src="./images/firebase.png" alt="Firebase" class="w-5 sm:w-7">
+                    </li>
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-black/10 bg-white/70 rounded-2xl cursor-pointer transition hover:-translate-y-1 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+                        <img src="./images/mongodb.png" alt="MongoDB" class="w-5 sm:w-7">
+                    </li>
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-black/10 bg-white/70 rounded-2xl cursor-pointer transition hover:-translate-y-1 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+                        <img src="./images/figma.png" alt="Figma" class="w-5 sm:w-7">
+                    </li>
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-black/10 bg-white/70 rounded-2xl cursor-pointer transition hover:-translate-y-1 hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+                        <img src="./images/git.png" alt="Git" class="w-5 sm:w-7">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="focus" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg tracking-[0.24em] uppercase text-accent font-Ovo">What I’m Building</h4>
+        <h2 class="text-center text-5xl font-Ovo">What I’m Focused On</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+            Right now, I’m focusing on building, learning, and getting more comfortable turning ideas into working software.
+        </p>
+
+        <div class="grid grid-cols-auto gap-6 my-10">
+            <div class="rounded-[26px] border border-black/10 bg-white/70 px-8 py-12 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:bg-panel hover:shadow-[0_16px_35px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:shadow-none">
+                <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-accentSoft dark:bg-white/10">
+                    <svg viewBox="0 0 48 48" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect x="8" y="12" width="32" height="24" rx="5" fill="#c46a3a"/>
+                        <path d="M14 18h20M14 24h14M14 30h10" stroke="#fffaf5" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg my-4 text-gray-700 dark:text-white">Web Development</h3>
+                <p class="text-sm text-gray-600 leading-5 dark:text-white/80">
+                    Creating responsive websites and interfaces that feel clean, clear, and easy to use.
+                </p>
+            </div>
+
+            <div class="rounded-[26px] border border-black/10 bg-white/70 px-8 py-12 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:bg-panel hover:shadow-[0_16px_35px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:shadow-none">
+                <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-accentSoft dark:bg-white/10">
+                    <svg viewBox="0 0 48 48" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect x="12" y="8" width="24" height="32" rx="6" fill="#0f172a"/>
+                        <rect x="16" y="13" width="16" height="18" rx="3" fill="#fffaf5"/>
+                        <circle cx="24" cy="35" r="2.5" fill="#c46a3a"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg my-4 text-gray-700 dark:text-white">Full-Stack Projects</h3>
+                <p class="text-sm text-gray-600 leading-5 dark:text-white/80">
+                    Learning how frontend and backend pieces come together through projects like Arcoria.
+                </p>
+            </div>
+
+            <div class="rounded-[26px] border border-black/10 bg-white/70 px-8 py-12 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:bg-panel hover:shadow-[0_16px_35px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:shadow-none">
+                <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-accentSoft dark:bg-white/10">
+                    <svg viewBox="0 0 48 48" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 34l8-18 8 10 6-14 6 22" fill="none" stroke="#c46a3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="18" cy="16" r="3" fill="#0f172a"/>
+                        <circle cx="26" cy="26" r="3" fill="#0f172a"/>
+                        <circle cx="32" cy="12" r="3" fill="#0f172a"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg my-4 text-gray-700 dark:text-white">Software Engineering</h3>
+                <p class="text-sm text-gray-600 leading-5 dark:text-white/80">
+                    Growing through problem-solving, debugging, collaboration, and writing code that can hold up over time.
+                </p>
+            </div>
+
+            <div class="rounded-[26px] border border-black/10 bg-white/70 px-8 py-12 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:bg-panel hover:shadow-[0_16px_35px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10 dark:hover:shadow-none">
+                <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-accentSoft dark:bg-white/10">
+                    <svg viewBox="0 0 48 48" class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="24" cy="24" r="13" fill="none" stroke="#0f172a" stroke-width="4"/>
+                        <path d="M24 16v8l6 4" stroke="#c46a3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg my-4 text-gray-700 dark:text-white">Continuous Learning</h3>
+                <p class="text-sm text-gray-600 leading-5 dark:text-white/80">
+                    Staying curious through coursework, coding challenges, hackathons, and projects that help me keep improving.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg tracking-[0.24em] uppercase text-accent font-Ovo">My Portfolio</h4>
+        <h2 class="text-center text-5xl font-Ovo">Projects I’ve Built</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+            Here are a few projects that show how I’m growing as a developer and what I enjoy building most.
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 my-10 gap-7">
+            <article class="overflow-hidden rounded-[28px] border border-black/10 bg-white/82 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-sm transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)] dark:border-white/10 dark:bg-white/5 dark:shadow-none dark:hover:bg-white/10">
+                <a href="https://arcoria-by-mary.vercel.app/" target="_blank" rel="noopener noreferrer" class="block" aria-label="Open Arcoria project">
+                    <div class="relative h-56 overflow-hidden bg-[#efe1d6] dark:bg-[#1b2435]">
+                        <svg viewBox="0 0 600 320" class="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arcoria project illustration">
+                            <rect width="600" height="320" fill="#f3e5d8"/>
+                            <rect x="34" y="38" width="532" height="244" rx="28" fill="#fffaf5"/>
+                            <rect x="64" y="68" width="176" height="184" rx="24" fill="#c46a3a"/>
+                            <rect x="268" y="68" width="268" height="52" rx="18" fill="#efe1d6"/>
+                            <rect x="268" y="136" width="268" height="18" rx="9" fill="#d8c0af"/>
+                            <rect x="268" y="168" width="202" height="18" rx="9" fill="#d8c0af"/>
+                            <rect x="268" y="204" width="108" height="34" rx="17" fill="#0f172a"/>
+                            <circle cx="152" cy="122" r="34" fill="#fffaf5"/>
+                            <path d="M136 120h32M152 104v32" stroke="#c46a3a" stroke-width="10" stroke-linecap="round"/>
+                            <rect x="92" y="176" width="120" height="14" rx="7" fill="#f7d4bf"/>
+                            <rect x="92" y="200" width="88" height="14" rx="7" fill="#f7d4bf"/>
+                        </svg>
+                    </div>
+                </a>
+                <div class="space-y-5 p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Arcoria</h3>
+                            <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-white/75">A full-stack project centered on helping users track progress, stay organized, and feel more motivated while learning.</p>
+                        </div>
+                        <a href="https://arcoria-by-mary.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 transition hover:bg-accent hover:text-white dark:border-accent/40 dark:bg-accent/10 dark:hover:bg-accent" aria-label="View Arcoria live project">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </a>
+                    </div>
+                    <ul class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-white/55">
+                        <li class="rounded-full bg-accentSoft px-3 py-1 dark:bg-white/10">React</li>
+                        <li class="rounded-full bg-accentSoft px-3 py-1 dark:bg-white/10">JavaScript</li>
+                        <li class="rounded-full bg-accentSoft px-3 py-1 dark:bg-white/10">Firebase</li>
+                    </ul>
+                    <div class="flex items-center gap-3">
+                        <a href="https://arcoria-by-mary.vercel.app/" target="_blank" rel="noopener noreferrer" class="rounded-full bg-accent px-5 py-2.5 text-sm text-white transition hover:bg-[#af5d33]">Live Demo</a>
+                        <a href="https://github.com/marympoyo1/Arcoria" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 px-5 py-2.5 text-sm text-slate-700 transition hover:bg-white dark:border-white/10 dark:text-white dark:hover:bg-white/10">GitHub</a>
+                        <span class="text-sm text-gray-500 dark:text-white/55">A hackathon idea that grew into a polished demo</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="overflow-hidden rounded-[28px] border border-black/10 bg-white/82 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-sm transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)] dark:border-white/10 dark:bg-white/5 dark:shadow-none dark:hover:bg-white/10">
+                <a href="https://marympoyo.com" target="_blank" rel="noopener noreferrer" class="block" aria-label="Open portfolio website project">
+                    <div class="relative h-56 overflow-hidden bg-[#ede4dc] dark:bg-[#1b2435]">
+                        <svg viewBox="0 0 600 320" class="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portfolio website illustration">
+                            <rect width="600" height="320" fill="#efe4da"/>
+                            <rect x="42" y="34" width="516" height="252" rx="30" fill="#fffaf5"/>
+                            <rect x="74" y="66" width="452" height="28" rx="14" fill="#0f172a"/>
+                            <circle cx="106" cy="80" r="6" fill="#fffaf5"/>
+                            <circle cx="126" cy="80" r="6" fill="#fffaf5"/>
+                            <circle cx="146" cy="80" r="6" fill="#fffaf5"/>
+                            <rect x="74" y="120" width="190" height="126" rx="24" fill="#c46a3a"/>
+                            <rect x="290" y="126" width="206" height="18" rx="9" fill="#d5bbaa"/>
+                            <rect x="290" y="158" width="168" height="18" rx="9" fill="#d5bbaa"/>
+                            <rect x="290" y="190" width="122" height="18" rx="9" fill="#d5bbaa"/>
+                            <rect x="290" y="224" width="98" height="34" rx="17" fill="#c46a3a"/>
+                            <circle cx="169" cy="183" r="32" fill="#fffaf5"/>
+                        </svg>
+                    </div>
+                </a>
+                <div class="space-y-5 p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Portfolio Website</h3>
+                            <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-white/75">My personal site for sharing projects, skills, and the kind of work I’m excited to keep doing.</p>
+                        </div>
+                        <a href="https://marympoyo.com" target="_blank" rel="noopener noreferrer" class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 transition hover:bg-accent hover:text-white dark:border-accent/40 dark:bg-accent/10 dark:hover:bg-accent" aria-label="View portfolio website">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </a>
+                    </div>
+                    <ul class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-white/55">
+                        <li class="rounded-full bg-accentSoft px-3 py-1 dark:bg-white/10">HTML</li>
+                        <li class="rounded-full bg-accentSoft px-3 py-1 dark:bg-white/10">Tailwind</li>
+                        <li class="rounded-full bg-accentSoft px-3 py-1 dark:bg-white/10">JavaScript</li>
+                    </ul>
+                    <div class="flex items-center gap-3">
+                        <a href="https://github.com/marympoyo1" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 px-5 py-2.5 text-sm text-slate-700 transition hover:bg-white dark:border-white/10 dark:text-white dark:hover:bg-white/10">GitHub</a>
+                        <span class="text-sm text-gray-500 dark:text-white/55">Built to feel clean, responsive, and easy to explore</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="overflow-hidden rounded-[28px] border border-black/10 bg-white/82 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-sm transition duration-500 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(15,23,42,0.14)] dark:border-white/10 dark:bg-white/5 dark:shadow-none dark:hover:bg-white/10">
+                <a href="https://github.com/marympoyo1" target="_blank" rel="noopener noreferrer" class="block" aria-label="Open GitHub profile">
+                    <div class="relative h-56 overflow-hidden bg-[#e6ddd6] dark:bg-[#1b2435]">
+                        <svg viewBox="0 0 600 320" class="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub projects illustration">
+                            <rect width="600" height="320" fill="#eadfd6"/>
+                            <rect x="38" y="38" width="524" height="244" rx="28" fill="#fffaf5"/>
+                            <rect x="68" y="72" width="212" height="176" rx="24" fill="#0f172a"/>
+                            <path d="M122 173c0-28 22-50 50-50s50 22 50 50" stroke="#fffaf5" stroke-width="14" fill="none" stroke-linecap="round"/>
+                            <circle cx="171" cy="141" r="24" fill="#c46a3a"/>
+                            <rect x="314" y="84" width="186" height="18" rx="9" fill="#d6c1b2"/>
+                            <rect x="314" y="118" width="152" height="18" rx="9" fill="#d6c1b2"/>
+                            <rect x="314" y="168" width="202" height="42" rx="21" fill="#f2e5db"/>
+                            <rect x="334" y="181" width="62" height="16" rx="8" fill="#c46a3a"/>
+                            <rect x="408" y="181" width="88" height="16" rx="8" fill="#d6c1b2"/>
+                            <rect x="314" y="224" width="154" height="18" rx="9" fill="#d6c1b2"/>
+                        </svg>
+                    </div>
+                </a>
+                <div class="space-y-5 p-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">More on GitHub</h3>
+                            <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-white/75">A broader look at the projects, experiments, and coursework that have helped me keep learning.</p>
+                        </div>
+                        <a href="https://github.com/marympoyo1" target="_blank" rel="noopener noreferrer" class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 transition hover:bg-accent hover:text-white dark:border-accent/40 dark:bg-accent/10 dark:hover:bg-accent" aria-label="View GitHub profile">
+                            <img src="./images/send-icon.png" alt="" class="w-5">
+                        </a>
+                    </div>
+                    <ul class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-white/55">
+                        <li class="rounded-full bg-accentSoft px-3 py-1 dark:bg-white/10">Projects</li>
+                        <li class="rounded-full bg-accentSoft px-3 py-1 dark:bg-white/10">Coursework</li>
+                        <li class="rounded-full bg-accentSoft px-3 py-1 dark:bg-white/10">Experiments</li>
+                    </ul>
+                    <div class="flex items-center gap-3">
+                        <a href="https://github.com/marympoyo1" target="_blank" rel="noopener noreferrer" class="rounded-full bg-accent px-5 py-2.5 text-sm text-white transition hover:bg-[#af5d33]">Open GitHub</a>
+                        <span class="text-sm text-gray-500 dark:text-white/55">A closer look at how I learn, build, and explore</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <a href="https://github.com/marympoyo1" target="_blank" rel="noopener noreferrer" class="w-max flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white/75 px-10 py-3 mx-auto my-20 text-gray-700 shadow-sm transition duration-500 hover:-translate-y-0.5 hover:bg-white dark:text-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
+            View GitHub
+            <img src="./images/right-arrow-bold.png" alt="" class="w-4 dark:hidden">
+            <img src="./images/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block">
+        </a>
+    </div>
+
+    <div id="contact" class="w-full px-[12%] pt-8 pb-4 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg tracking-[0.24em] uppercase text-accent font-Ovo">Let’s Connect</h4>
+        <h2 class="text-center text-5xl font-Ovo">Get in Touch</h2>
+        <p class="text-center max-w-2xl mx-auto mt-4 mb-8 font-Ovo">
+            If you’d like to connect or collaborate, I’d love to hear from you.
+        </p>
+
+        <form id="contactForm" method="POST" action="https://api.web3forms.com/submit" class="max-w-2xl mx-auto rounded-[28px] border border-black/10 bg-white/80 px-6 py-8 shadow-[0_18px_55px_rgba(15,23,42,0.08)] backdrop-blur-sm dark:border-white/10 dark:bg-white/5 dark:shadow-none sm:px-8">
+            <input id="web3formsAccessKey" type="hidden" name="access_key" value="f65732f7-ef62-4d1c-a590-8c3984fcbc2d">
+
+            <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+                <input type="text" placeholder="Enter your name" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90" required name="name">
+
+                <input type="email" placeholder="Enter your email" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90" required name="email">
+            </div>
+
+            <textarea rows="6" placeholder="Enter your message" class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white/90" required name="message"></textarea>
+
+            <button id="contactSubmitButton" type="submit" class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover">
+                Submit
+                <img src="./images/right-arrow-white.png" alt="" class="w-4">
+            </button>
+            <p id="formStatus" class="mt-4 hidden rounded-2xl border px-4 py-3 text-center text-sm" aria-live="polite"></p>
+        </form>
+    </div>
+
+    <div class="mt-14">
+        <div class="text-center">
+            <img src="./images/chatT.png" alt="" class="w-36 mx-auto mb-2 dark:hidden">
+            <img src="./images/chatdm.png" alt="" class="w-36 mx-auto mb-2 hidden dark:block">
+
+            <div class="w-max flex items-center gap-2 mx-auto">
+                <img src="./images/mail_icon.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/mail_icon_dark.png" alt="" class="w-6 hidden dark:block">
+                marympoyo1@gmail.com
+            </div>
+        </div>
+
+        <div class="text-center sm:flex items-center justify-between border-t border-black/10 dark:border-white/10 mx-[10%] mt-10 py-6">
+            <p>© 2026 Mary Mpoyo. All rights reserved.</p>
+            <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+                <li><a href="https://www.linkedin.com/in/mary-m-717a83253/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/marympoyo1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

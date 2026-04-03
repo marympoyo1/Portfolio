@@ -1,0 +1,20 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path
+      id="circlePath"
+      d="M 100,100 m -68,0 a 68,68 0 1,1 136,0 a 68,68 0 1,1 -136,0"
+    />
+  </defs>
+
+  <text
+    font-size="20"
+    fill="#4b5563"
+    letter-spacing="2"
+    font-family="Georgia, serif"
+    font-weight="500"
+  >
+    <textPath href="#circlePath" startOffset="25%">
+      SOFTWARE DEVELOPER
+    </textPath>
+  </text>
+</svg>

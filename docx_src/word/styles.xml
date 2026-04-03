@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:style w:type="paragraph" w:default="1" w:styleId="Normal">
+    <w:name w:val="Normal"/>
+    <w:qFormat/>
+    <w:rPr>
+      <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/>
+      <w:sz w:val="22"/>
+      <w:szCs w:val="22"/>
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Name">
+    <w:name w:val="Name"/>
+    <w:pPr>
+      <w:jc w:val="center"/>
+      <w:spacing w:after="60"/>
+    </w:pPr>
+    <w:rPr>
+      <w:b/>
+      <w:sz w:val="34"/>
+      <w:szCs w:val="34"/>
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Contact">
+    <w:name w:val="Contact"/>
+    <w:pPr>
+      <w:jc w:val="center"/>
+      <w:spacing w:after="80"/>
+    </w:pPr>
+    <w:rPr>
+      <w:sz w:val="20"/>
+      <w:szCs w:val="20"/>
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="SectionHeader">
+    <w:name w:val="SectionHeader"/>
+    <w:pPr>
+      <w:spacing w:before="120" w:after="40"/>
+      <w:pBdr>
+        <w:bottom w:val="single" w:sz="8" w:space="1" w:color="222222"/>
+      </w:pBdr>
+    </w:pPr>
+    <w:rPr>
+      <w:b/>
+      <w:caps/>
+      <w:sz w:val="21"/>
+      <w:szCs w:val="21"/>
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Tight">
+    <w:name w:val="Tight"/>
+    <w:pPr>
+      <w:spacing w:after="20"/>
+    </w:pPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Bullet">
+    <w:name w:val="Bullet"/>
+    <w:pPr>
+      <w:ind w:left="360" w:hanging="180"/>
+      <w:spacing w:after="20"/>
+    </w:pPr>
+  </w:style>
+</w:styles>

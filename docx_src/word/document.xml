@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p><w:pPr><w:pStyle w:val="Name"/></w:pPr><w:r><w:t>Mary Mpoyo</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Contact"/></w:pPr><w:r><w:t>Houston, TX | marympoyo1@gmail.com | marympoyo.com | github.com/marympoyo1 | linkedin.com/in/mary-m-717a83253</w:t></w:r></w:p>
+
+    <w:p><w:pPr><w:pStyle w:val="SectionHeader"/></w:pPr><w:r><w:t>Profile</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:t>Computer Science student at Texas Southern University with hands-on experience building and deploying web applications through coursework and personal projects. Strong foundation in JavaScript, React, HTML/CSS, Firebase, and core computer science concepts. Seeking a software engineering or technology internship where I can contribute, learn quickly, and grow as a developer.</w:t></w:r></w:p>
+
+    <w:p><w:pPr><w:pStyle w:val="SectionHeader"/></w:pPr><w:r><w:t>Education</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Texas Southern University</w:t></w:r><w:r><w:t>, B.S. in Computer Science | Houston, TX | Expected May 2027</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Relevant Coursework:</w:t></w:r><w:r><w:t xml:space="preserve"> Data &amp; File Structures, Computer Organization, Computer Networks Fundamentals, Database Management Systems, Operating Systems, Software Engineering, Theory of Computation, Advanced OOP Using C++</w:t></w:r></w:p>
+
+    <w:p><w:pPr><w:pStyle w:val="SectionHeader"/></w:pPr><w:r><w:t>Technical Skills</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Languages:</w:t></w:r><w:r><w:t xml:space="preserve"> JavaScript, Python, Java, C++, HTML, CSS</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Frameworks/Libraries:</w:t></w:r><w:r><w:t xml:space="preserve"> React, Tailwind CSS</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Tools/Platforms:</w:t></w:r><w:r><w:t xml:space="preserve"> Firebase, Git, GitHub, VS Code, Vercel, Figma</w:t></w:r></w:p>
+
+    <w:p><w:pPr><w:pStyle w:val="SectionHeader"/></w:pPr><w:r><w:t>Projects</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Arcoria</w:t></w:r><w:r><w:t xml:space="preserve"> | React | JavaScript | Firebase | Vite</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:t>Live Demo: arcoria-by-mary.vercel.app | GitHub: github.com/marympoyo1/Arcoria</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Built and deployed a learning platform that helps users turn online tutorials into structured skill paths and track progress over time.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Developed the application with React, JavaScript, and Vite, and integrated Firebase-backed functionality to support core user workflows.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Expanded a hackathon concept into a polished live demo, emphasizing responsive design, usability, and clear product thinking.</w:t></w:r></w:p>
+
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Portfolio Website</w:t></w:r><w:r><w:t xml:space="preserve"> | HTML | Tailwind CSS | JavaScript</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:t>Live Site: marympoyo.com | GitHub: github.com/marympoyo1</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Designed and deployed a personal portfolio website to present projects, technical skills, and career interests in a professional format.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Implemented responsive layouts, mobile navigation, dark mode, and a contact workflow using HTML, Tailwind CSS, and JavaScript.</w:t></w:r></w:p>
+
+    <w:p><w:pPr><w:pStyle w:val="SectionHeader"/></w:pPr><w:r><w:t>Leadership &amp; Involvement</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Tiger Computer Science Society, Member</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Student-Athlete, Texas Southern University, 2022 - 2023</w:t></w:r></w:p>
+
+    <w:p><w:pPr><w:pStyle w:val="SectionHeader"/></w:pPr><w:r><w:t>Work Experience</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Sales Associate, Uptown Cheapskate</w:t></w:r><w:r><w:t xml:space="preserve"> | Boise, ID | May 2022 - Sep 2022</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Delivered personalized customer service in a fast-paced retail environment while assisting with product selection, fit guidance, and styling support.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Maintained an organized sales floor through merchandising, restocking, and attention to detail, and processed transactions accurately to support daily sales goals.</w:t></w:r></w:p>
+
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Front Desk Receptionist, Better Choice Care</w:t></w:r><w:r><w:t xml:space="preserve"> | Boise, ID | Apr 2020 - Aug 2020; Jan 2021 - Jul 2021</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Managed front desk operations including greeting visitors, answering phones, directing guests, and supporting scheduling needs.</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Communicated clearly with staff and visitors while multitasking in a time-sensitive, service-oriented environment.</w:t></w:r></w:p>
+
+    <w:p><w:pPr><w:pStyle w:val="Tight"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>Daycare Instructor, Healthy Beginnings</w:t></w:r><w:r><w:t xml:space="preserve"> | Meridian, ID | Jun 2018 - Nov 2018</w:t></w:r></w:p>
+    <w:p><w:pPr><w:pStyle w:val="Bullet"/></w:pPr><w:r><w:t>• Provided attentive care and support in a structured, fast-paced environment while maintaining a safe and organized space.</w:t></w:r></w:p>
+
+    <w:sectPr>
+      <w:pgSz w:w="12240" w:h="15840"/>
+      <w:pgMar w:top="720" w:right="720" w:bottom="720" w:left="720" w:header="708" w:footer="708" w:gutter="0"/>
+    </w:sectPr>
+  </w:body>
+</w:document>
