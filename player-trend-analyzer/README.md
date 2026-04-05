@@ -64,6 +64,19 @@ Then open:
 http://127.0.0.1:5000
 ```
 
+## Deploying on Vercel
+
+This project can be deployed as its own Vercel project from the `player-trend-analyzer` folder.
+
+Recommended setup:
+
+1. Import the GitHub repository into Vercel.
+2. Set the **Root Directory** to `player-trend-analyzer`.
+3. Keep the default Python/Flask detection.
+4. Deploy.
+
+Static assets are served from `public/`, which matches Vercel's Python deployment behavior.
+
 Optional terminal version:
 
 ```bash

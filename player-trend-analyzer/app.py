@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import date
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 
 from analysis import build_snapshot, build_trend_summary, snapshot_rows
 from api_client import fetch_player_game_log, find_player_by_name
@@ -22,6 +22,11 @@ def recent_games_rows(game_log):
     recent_games["GAME_DATE"] = recent_games["GAME_DATE"].dt.strftime("%b %d, %Y")
     columns = ["GAME_DATE", "MATCHUP", "WL", "PTS", "REB", "AST"]
     return recent_games[columns].to_dict(orient="records")
+
+
+@app.route("/styles.css")
+def styles():
+    return send_from_directory("public", "styles.css")
 
 
 @app.route("/", methods=["GET", "POST"])
